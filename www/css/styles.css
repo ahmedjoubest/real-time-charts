@@ -1,0 +1,61 @@
+
+.custom-panel {
+  top: 0;
+  right: 0;
+  opacity: 0.4;
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  width: 30%;
+  height: 98%;
+  transition: opacity 0.3s;
+}
+
+.custom-panel:hover {
+  opacity: 1;
+}
+
+.panel-header {
+  background-color: #f5f5f5;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.close-btn, .settings-btn {
+  cursor: pointer;
+  font-size: 21px;
+  color: #000;
+  margin-right: 10px;
+}
+
+.panel-title {
+  margin-left: 6px;
+  font-size: 18px;
+}
+
+.chart-title {
+  font-size: 13px;
+  margin-top: 15px;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.settings-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+/* Hide the navigator and x-axis */
+.highcharts-navigator {
+  display: none;
+}
+.highcharts-navigator-xaxis {
+  display: none;
+}
