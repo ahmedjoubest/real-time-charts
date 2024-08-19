@@ -55,7 +55,7 @@ server <- function(input, output, session) {
   })
   
   # ------ * Initialize the line chart -----------------------------------------
-  output$hc_addpoint <- renderHighchart({
+  output$hc_plot_1 <- renderHighchart({
     hc <- highchart() |>
       hc_chart(type = "column") |>
       hc_xAxis(title = list(), labels = list(enabled = FALSE), tickLength = 0) |>
@@ -92,7 +92,7 @@ server <- function(input, output, session) {
   })
   
   # ------ * Initialize the bar chart ------------------------------------------
-  output$hc_set_data <- renderHighchart({
+  output$hc_plot_2 <- renderHighchart({
     hchart(
       isolate(tables$visits_dist), # isolate reactive data: only update through proxy
       "column",
@@ -117,7 +117,7 @@ server <- function(input, output, session) {
   # ------ * Update the charts -------------------------------------------------
   observeEvent(tables$active_visits, {
     # update the line chart
-    highchartProxy("hc_addpoint") |>
+    highchartProxy("hc_plot_1") |>
       hcpxy_add_point(
         id = "New Visitor",
         point = list(
@@ -136,7 +136,7 @@ server <- function(input, output, session) {
       )
     
     # Update the bar chart
-    highchartProxy("hc_set_data") |>
+    highchartProxy("hc_plot_2") |>
       hcpxy_set_data(
         type = "column",
         data = tables$visits_dist,

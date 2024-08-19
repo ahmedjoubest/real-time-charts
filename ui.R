@@ -29,11 +29,11 @@ ui <- fluidPage(
       "Visitor Activity Trends - Last 30 seconds",
       class = "chart-title"
     ),
-    highchartOutput("hc_addpoint", height = "36vh"),
+    highchartOutput("hc_plot_1", height = "36vh"),
     h5("Real-Time distribution of", tags$b(id = "active_visits", style = "color: #FFA622;"),
        "active sessions", 
        class = "chart-title",
        style = "margin-top: 0px !important;"),
-    highchartOutput("hc_set_data", height = "39vh")
+    highchartOutput("hc_plot_2", height = "39vh")
   )
 )
